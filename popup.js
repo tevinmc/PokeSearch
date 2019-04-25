@@ -29,6 +29,12 @@ function pokeSubmit(param) {
       pokemonName.innerHTML = `${name}`;
       pokemonDisplay.appendChild(pokemonName);
 
+      // audio
+      const pokemonCry = document.createElement('audio');
+      pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
+      pokemonCry.setAttribute('autoplay', 'true');
+      pokemonDisplay.appendChild(pokemonCry);
+
       // img
       const pokemonImage = document.createElement('img');
       pokemonImage.setAttribute('src', imgURL);
