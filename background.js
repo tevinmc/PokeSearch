@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function() {
   console.log('im in');
-
+  debugger;
   chrome.storage.sync.set({ color: '#3aa757' }, function() {
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
       chrome.declarativeContent.onPageChanged.addRules([
