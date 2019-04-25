@@ -34,17 +34,12 @@ function pokeSubmit(param) {
       pokemonName.innerHTML = `${name}`;
       pokemonDisplay.appendChild(pokemonName);
 
-      // NEWW
-      // pokemonDisplay.style.border = '1px solid black';
+      // Styles
       pokemonDisplay.style.marginTop = '10px';
-      // pokemonImage.style.border = '1px solid black';
-      // pokemonId.style.border = '1px solid black';
-      // pokemonName.style.border = '1px solid black';
-
       pokemonDisplay.style.display = 'flex';
       pokemonId.style.padding = '5px';
       pokemonName.style.padding = '5px';
-
+      // Animations
       if (backURL !== null) {
         setInterval(function() {
           if (pokemonImage.src === imgURL) {
@@ -58,8 +53,7 @@ function pokeSubmit(param) {
     .catch(error => {
       console.log(error);
       // change to photo
-      const pokemonLogo =
-        'http://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-png-2000.png';
+      const pokemonLogo = 'images/pokemonLogo.png';
       const errorMessage = document.createElement('section');
       const pokemonLogoImg = document.createElement('img');
       pokemonLogoImg.setAttribute('src', pokemonLogo);

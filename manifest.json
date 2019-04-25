@@ -1,7 +1,7 @@
 {
     "name": "PokeSearch",
     "version": "1.0",
-    "description": "The one stop shop for all your poke needs",
+    "description": "The one stop shop for all your Poke needs",
     "permissions": [
         "activeTab",
         "declarativeContent",
