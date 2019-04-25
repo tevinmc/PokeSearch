@@ -4,7 +4,7 @@ const text = document.querySelector('input');
 const img = document.querySelector('img');
 const body = document.querySelector('body');
 const input = document.querySelector('input');
-
+//bryan
 // pokeSubmit
 function pokeSubmit(param) {
   fetch(`http://pokeapi.co/api/v2/pokemon/${param}`)
