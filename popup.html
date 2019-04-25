@@ -3,18 +3,45 @@
 
 <head>
     <style>
-        div {
+        body {
+            height: 120px;
+            text-align: center;
+        }
+
+        /* img,
+        p {
+            border: 1px solid black;
+        } */
+
+        div,
+            {
             display: flex;
-            width: 100%;
+        }
+
+        p {
+            padding-top: 30px !important;
+        }
+
+        p:nth-child(1) {
+            width: 20px;
+        }
+
+        p:nth-child(2) {
+            width: 70px;
         }
 
         input {
             width: 150px;
         }
+
+        article {
+            width: 215px;
+        }
     </style>
 </head>
 
 <body>
+    <article></article>
     <div>
         <input type='text' placeholder="Enter Pokemon Name"></input>
         <button>Search</button>
