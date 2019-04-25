@@ -30,10 +30,23 @@ function pokeSubmit(param) {
       pokemonDisplay.appendChild(pokemonName);
 
       // audio
-      const pokemonCry = document.createElement('audio');
-      pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
-      pokemonCry.setAttribute('autoplay', 'true');
-      pokemonDisplay.appendChild(pokemonCry);
+      // const pokemonCry = document.createElement('audio');
+      // pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
+      // pokemonCry.setAttribute('autoplay', 'true');
+      // pokemonDisplay.appendChild(pokemonCry);
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 112) {
+          console.log(pokemonNumber);
+          if (pokemonNumber <= 150) {
+            const pokemonCry = document.createElement('audio');
+            console.log('im in');
+            pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
+            pokemonCry.setAttribute('autoplay', 'true');
+            pokemonDisplay.appendChild(pokemonCry);
+            pokemonCry.removeAttribute('class');
+          }
+        }
+      });
 
       // img
       const pokemonImage = document.createElement('img');
