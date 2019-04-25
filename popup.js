@@ -3,17 +3,15 @@ const button = document.querySelector('button');
 const text = document.querySelector('input');
 const img = document.querySelector('img');
 const body = document.querySelector('body');
-const form = document.querySelector('#data');
-debugger;
-console.log(form);
+const input = document.querySelector('input');
 
 // pokeSubmit
 function pokeSubmit(param) {
-  fetch(`http://pokeapi.co/api/v2/pokemon/${param}`)
+  fetch('http://pokeapi.co/api/v2/pokemon/' + param)
     .then(response => response.json())
     .then(result => {
       const imgURL = result.sprites.front_default;
-      const { name } = result;
+      const {name} = result;
       const pokemonNumber = result.id;
 
       // section
@@ -35,8 +33,26 @@ function pokeSubmit(param) {
       pokemonId.innerHTML = `#${pokemonNumber}`;
       pokemonDisplay.appendChild(pokemonId);
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      const errorMessage = document.createElement('p');
+      errorMessage.innerHTML = 'Not Valid. Try again!';
+      body.appendChild(errorMessage);
+    });
 }
+
+// event listeners
+button.addEventListener('click', function() {
+  let value = input.value.toLowerCase();
+  pokeSubmit(value);
+});
+
+window.addEventListener('keydown', function(e) {
+  if (e.keyCode === 13) {
+    let value = input.value.toLowerCase();
+    pokeSubmit(value);
+  }
+});
 
 // pokeSubmit('charmander');
 // pokeSubmit('pikachu');
