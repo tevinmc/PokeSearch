@@ -30,14 +30,24 @@ function pokeSubmit(param) {
       pokemonDisplay.appendChild(pokemonName);
 
       // audio
-      window.addEventListener('keydown', function (e) {
-        if (e.keyCode === 16) {
-          const pokemonCry = document.querySelector('audio');;
-          if (pokemonNumber <= 150) {
-            pokemonCry.setAttribute('src', `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`);
-            pokemonCry.play();
-          } else {
-            pokemonCry.setAttribute('src', '');
+      // const pokemonCry = document.createElement('audio');
+      // pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
+      // pokemonCry.setAttribute('autoplay', 'true');
+      // pokemonDisplay.appendChild(pokemonCry);
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 112) {
+          console.log(pokemonNumber);
+          const audioholder = document.createElement('div');
+          const pokemonCry = document.createElement('audio');
+          if (Number(pokemonNumber) <= 150) {
+            console.log('im in');
+            pokemonCry.src = `./soundeffects/Pokemon-sounds/pokemon${pokemonNumber}.wav`;
+            pokemonCry.setAttribute('autoplay', 'true');
+            // pokemonCry.setAttribute('class', 'audio');
+            // const test = document.querySelector('.audio');
+            audioholder.appendChild(pokemonCry);
+            body.appendChild(audioholder);
+            // body.removeChild(test);
           }
         }
       });
@@ -54,7 +64,7 @@ function pokeSubmit(param) {
       pokemonName.style.padding = '5px';
       // Animations
       if (backURL !== null) {
-        setInterval(function () {
+        setInterval(function() {
           if (pokemonImage.src === imgURL) {
             pokemonImage.setAttribute('src', backURL);
           } else {
@@ -79,14 +89,14 @@ function pokeSubmit(param) {
 }
 
 // event listeners (UPDATED)
-button.addEventListener('click', function () {
+button.addEventListener('click', function() {
   const remove = document.querySelector('section');
   body.removeChild(remove);
   const value = input.value.toLowerCase();
   pokeSubmit(value);
 });
 
-window.addEventListener('keydown', function (e) {
+window.addEventListener('keydown', function(e) {
   if (e.keyCode === 13) {
     const remove = document.querySelector('section');
     body.removeChild(remove);
