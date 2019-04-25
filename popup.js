@@ -12,17 +12,12 @@ function pokeSubmit(param) {
     .then(result => {
       const imgURL = result.sprites.front_default;
       const backURL = result.sprites.back_default;
-      const { name } = result;
+      const name = result.name[0].toUpperCase() + result.name.substring(1);
       const pokemonNumber = result.id;
 
       // section
       const pokemonDisplay = document.createElement('section');
       body.appendChild(pokemonDisplay);
-
-      // img
-      const pokemonImage = document.createElement('img');
-      pokemonImage.setAttribute('src', imgURL);
-      pokemonDisplay.appendChild(pokemonImage);
 
       // ID
       const pokemonId = document.createElement('p');
@@ -34,8 +29,13 @@ function pokeSubmit(param) {
       pokemonName.innerHTML = `${name}`;
       pokemonDisplay.appendChild(pokemonName);
 
+      // img
+      const pokemonImage = document.createElement('img');
+      pokemonImage.setAttribute('src', imgURL);
+      pokemonDisplay.appendChild(pokemonImage);
+
       // Styles
-      pokemonDisplay.style.marginTop = '10px';
+      pokemonDisplay.style.marginTop = '5px';
       pokemonDisplay.style.display = 'flex';
       pokemonId.style.padding = '5px';
       pokemonName.style.padding = '5px';
@@ -58,6 +58,7 @@ function pokeSubmit(param) {
       const pokemonLogoImg = document.createElement('img');
       pokemonLogoImg.setAttribute('src', pokemonLogo);
       pokemonLogoImg.setAttribute('height', '50');
+      pokemonLogoImg.style.marginTop = '15px';
       errorMessage.appendChild(pokemonLogoImg);
       body.appendChild(errorMessage);
       errorMessage.style.marginTop = '10px';

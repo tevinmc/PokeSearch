@@ -3,12 +3,44 @@
 
 <head>
     <style>
+        body {
+            height: 120px;
+            text-align: center;
+        }
 
+        /* img,
+        p {
+            border: 1px solid black;
+        } */
+        div,
+            {
+            display: flex;
+        }
+
+        p {
+            padding-top: 30px !important;
+        }
+
+        p:nth-child(1) {
+            width: 20px;
+        }
+
+        p:nth-child(2) {
+            width: 70px;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        article {
+            width: 215px;
+        }
     </style>
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
 
 <body>
+    <article></article>
     <div>
         <input type='text' placeholder="Enter Pokemon Name"></input>
         <button>Search</button>
